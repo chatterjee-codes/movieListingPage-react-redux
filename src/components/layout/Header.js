@@ -21,7 +21,9 @@ const Header = () => {
             <Nav.Link href='#'>
               <Link to='/'>Home</Link>
             </Nav.Link>
-            <Nav.Link href='#!'>TV Shows</Nav.Link>
+            <Nav.Link href='#!'>
+              <Link to='/shows'>TV Shows</Link>
+            </Nav.Link>
             <Nav.Link href='#!'>
               <Link to='/movies'>Movies</Link>
             </Nav.Link>

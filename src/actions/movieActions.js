@@ -1,4 +1,9 @@
-import { GET_MOVIE_DETAILS, GET_POPULAR_MOVIES, MOVIES_ERROR } from './types';
+import {
+  GET_MOVIE_DETAILS,
+  GET_SHOWS,
+  GET_POPULAR_MOVIES,
+  ERROR,
+} from './types';
 import axios from 'axios';
 
 let api_key = '74b37141b7123c803bb6a7f66e9bf313';
@@ -15,7 +20,7 @@ export const getPopularMovies = () => async (dispatch) => {
     });
   } catch (err) {
     dispatch({
-      type: MOVIES_ERROR,
+      type: ERROR,
       payload: err.response.statustext,
     });
   }
@@ -33,7 +38,7 @@ export const getMovieDetails = (id) => async (dispatch) => {
     });
   } catch (err) {
     dispatch({
-      type: MOVIES_ERROR,
+      type: ERROR,
       payload: err.response.statustext,
     });
   }

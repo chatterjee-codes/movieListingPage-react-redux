@@ -5,16 +5,16 @@ import { useParams } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { getMovieDetails } from '../../../actions/movieActions';
+import { getShowDetails } from '../../../actions/showActions';
 
-const Movie = ({ movie: { movie }, getMovieDetails }) => {
+const Show = ({ show: { show }, getShowDetails }) => {
   const { id } = useParams();
   useEffect(() => {
-    getMovieDetails(id);
+    getShowDetails(id);
 
     //eslint-disable-next-line
   }, []);
-  let posterLink = `https://image.tmdb.org/t/p/w185/${movie.poster_path}`;
+  let posterLink = `https://image.tmdb.org/t/p/w185/${show.poster_path}`;
 
   return (
     <div className='wrapper-2'>
@@ -27,19 +27,19 @@ const Movie = ({ movie: { movie }, getMovieDetails }) => {
         </div>
       </div>
       <div>
-        <h1>{movie.original_title}</h1>
-        <h3>{movie.tagline}</h3>
-        <h4>Genre: {movie.genres.map((genre) => genre.name + ' ')}</h4>
+        <h1>{show.name}</h1>
+        <h3>{show.tagline}</h3>
+        <h4>Genre: {show.genres.map((genre) => genre.name + ' | ')}</h4>
         <div className='subWrapper-2'>
           <div>
-            <h4>Rating: {movie.vote_average}</h4>
+            <h4>Rating: {show.vote_average}</h4>
           </div>
           <div>
-            <h4>Released on: {movie.release_date}</h4>
+            <h4>First Air Date: {show.first_air_date}</h4>
           </div>
         </div>
         <div>
-          <p>{movie.overview}</p>
+          <p>{show.overview}</p>
         </div>
       </div>
     </div>
@@ -47,10 +47,10 @@ const Movie = ({ movie: { movie }, getMovieDetails }) => {
 };
 
 const mapStateToProps = (state) => ({
-  movie: state.movie,
+  show: state.show,
 });
 
-export default connect(mapStateToProps, { getMovieDetails })(Movie);
+export default connect(mapStateToProps, { getShowDetails })(Show);
 
 // original_title,
 //       tagline,

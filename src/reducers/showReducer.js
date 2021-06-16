@@ -1,23 +1,24 @@
-import { GET_POPULAR_MOVIES, GET_MOVIE_DETAILS, ERROR } from '../actions/types';
+import { GET_SHOWS, GET_SHOW_DETAILS, ERROR } from '../actions/types';
 
 const initialState = {
-  movies: [],
-  movie: {},
+  shows: [],
+  show: {},
   error: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_POPULAR_MOVIES:
+    case GET_SHOWS:
       return {
         ...state,
-        movies: action.payload,
+        shows: action.payload,
       };
-    case GET_MOVIE_DETAILS:
+    case GET_SHOW_DETAILS:
       return {
         ...state,
-        movie: action.payload,
+        show: action.payload,
       };
+
     case ERROR:
       return {
         ...state,
