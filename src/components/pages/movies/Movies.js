@@ -19,21 +19,24 @@ const Movies = ({ movie: { movies, loading }, getPopularMovies }) => {
     return <Loader />;
   } else {
     return (
-      <div className='listWrapper'>
-        {movies !== null ? (
-          movies.map((movie) => <MovieItem movie={movie} key={movie.id} />)
-        ) : (
-          <div style={{ marginLeft: '100%' }}>
-            <Spinner animation='border'></Spinner>
-          </div>
-        )}
+      <div style={{ background: 'rgb(26, 26, 26)' }}>
+        <div className='listWrapper'>
+          {movies !== null ? (
+            movies.map((movie) => <MovieItem movie={movie} key={movie.id} />)
+          ) : (
+            <div style={{ marginLeft: '100%' }}>
+              <Spinner animation='border'></Spinner>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
 };
-// Movies.propTypes = {
-//   movie: PropTypes.object.isRequired,
-// };
+
+Movies.propTypes = {
+  movie: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   movie: state.movie,

@@ -17,17 +17,19 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='mr-auto' id='header'>
-            <Nav.Link href='#'>
+          <Nav className='mr-auto' id='menu'>
+            <Nav.Link href='#' id='menuItem'>
               <Link to='/'>Home</Link>
             </Nav.Link>
-            <Nav.Link href='#!'>
+            <Nav.Link href='#!' id='menuItem'>
               <Link to='/shows'>TV Shows</Link>
             </Nav.Link>
-            <Nav.Link href='#!'>
+            <Nav.Link href='#!' id='menuItem'>
               <Link to='/movies'>Movies</Link>
             </Nav.Link>
-            <Nav.Link href='#!'>My List</Nav.Link>
+            <Nav.Link href='#!' id='menuItem'>
+              My List
+            </Nav.Link>
           </Nav>
           <br />
 

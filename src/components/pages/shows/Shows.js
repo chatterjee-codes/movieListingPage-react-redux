@@ -19,21 +19,24 @@ const Shows = ({ show: { shows, loading }, getShows }) => {
     return <Loader />;
   } else {
     return (
-      <div className='listWrapper'>
-        {shows !== null ? (
-          shows.map((show) => <ShowItem show={show} key={show.id} />)
-        ) : (
-          <div style={{ marginLeft: '100%' }}>
-            <Spinner animation='border'></Spinner>
-          </div>
-        )}
+      <div style={{ background: 'rgb(26, 26, 26)' }}>
+        <div className='listWrapper'>
+          {shows !== null ? (
+            shows.map((show) => <ShowItem show={show} key={show.id} />)
+          ) : (
+            <div style={{ marginLeft: '100%' }}>
+              <Spinner animation='border'></Spinner>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
 };
-// Movies.propTypes = {
-//   movie: PropTypes.object.isRequired,
-// };
+
+Shows.propTypes = {
+  show: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   show: state.show,

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/layout/Header';
+import Home from './components/pages/Home';
 import Shows from './components/pages/shows/Shows';
 import Show from './components/pages/shows/Show';
 import Movies from './components/pages/movies/Movies';
@@ -17,7 +18,7 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path='/' />
+          <Route exact path='/' component={Home} />
           <Route exact path='/shows' component={Shows} />
           <Route exact path='/show/:id' component={Show} />
           <Route exact path='/movies' component={Movies} />

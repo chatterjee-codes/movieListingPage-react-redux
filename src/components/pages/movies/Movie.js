@@ -25,9 +25,8 @@ const Movie = ({ movie: { movie, loading }, getMovieDetails }) => {
           <div>
             <img src={posterLink} alt='' />
           </div>
-          <div>
-            <button>Watch Now</button>
-          </div>
+
+          <button>Watch Now</button>
         </div>
         <div className='wrapper-body'>
           <h1>{movie.original_title}</h1>
@@ -42,9 +41,7 @@ const Movie = ({ movie: { movie, loading }, getMovieDetails }) => {
               <h4>Released on: {movie.release_date}</h4>
             </div>
           </div>
-          <div>
-            <p>{movie.overview}</p>
-          </div>
+          <p>{movie.overview}</p>
         </div>
       </div>
     );

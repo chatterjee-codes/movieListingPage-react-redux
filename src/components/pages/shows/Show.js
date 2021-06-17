@@ -29,7 +29,7 @@ const Show = ({ show: { show, loading }, getShowDetails }) => {
             <button>Watch Now</button>
           </div>
         </div>
-        <div>
+        <div className='wrapper-body'>
           <h1>{show.name}</h1>
           <h3>{show.tagline}</h3>
           {/* <h4>Genre: {show.genres.map((genre) => genre.name + ' | ')}</h4> */}

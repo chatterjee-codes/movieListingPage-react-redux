@@ -4,9 +4,11 @@ import {
   ERROR,
   SET_LOADING,
 } from './types';
-import axios from 'axios';
 
-let api_key = '74b37141b7123c803bb6a7f66e9bf313';
+import axios from 'axios';
+require('dotenv').config();
+
+let api_key = process.env.REACT_APP_KEY;
 
 // Get popular movies from API
 export const getPopularMovies = () => async (dispatch) => {
