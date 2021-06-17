@@ -1,8 +1,8 @@
 import {
   GET_MOVIE_DETAILS,
-  GET_SHOWS,
   GET_POPULAR_MOVIES,
   ERROR,
+  SET_LOADING,
 } from './types';
 import axios from 'axios';
 
@@ -43,3 +43,6 @@ export const getMovieDetails = (id) => async (dispatch) => {
     });
   }
 };
+
+//set loading
+const setLoading = () => (dispatch) => ({ type: SET_LOADING });

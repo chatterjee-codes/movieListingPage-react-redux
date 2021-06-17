@@ -1,19 +1,14 @@
 * {
-  background: rgb(17, 17, 17);
-  color: #fff;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 /* Header */
-.header {
-  padding: 1rem;
-  background: rgb(26, 26, 26);
-}
+
 #header a {
-  color: #fff;
   text-decoration: none;
+  color: black;
 }
 #header a:hover {
   color: tomato;
@@ -26,31 +21,82 @@
 .btn-header:hover {
   background: rgb(204, 31, 0) !important;
 }
+
+/* List :Show & Movie  */
+.listWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+
+.listCard {
+  border-style: none;
+  box-shadow: 1px 5px 10px rgb(175, 175, 175);
+  border-radius: 10px;
+}
+.listCard:hover {
+  box-shadow: 1px 5px 20px rgb(177, 177, 177);
+}
+
+.listCard img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.listCard p {
+  overflow: hidden;
+  width: 300px;
+  /* height: 100px; */
+  text-overflow: ellipsis;
+  text-align: justify;
+}
+
+/* Details */
 .wrapper-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
-  margin-top: 6%;
+  /* width: 100%; */
+  margin-top: 3%;
 }
 
 .wrapper-2 img {
   width: 50%;
   height: 450px;
   margin-left: 20%;
+  box-shadow: 1px 5px 10px rgb(41, 41, 41);
+  border-radius: 5px;
 }
 
 .wrapper-2 button {
   text-align: center;
   border: none;
-  background: red;
+  background: rgb(170, 0, 0) !important;
   width: 50%;
+  padding: 0.5rem 0;
   margin: 1rem 0 1rem 20%;
+  opacity: 0.8;
+}
+
+.wrapper-2 button:hover {
+  opacity: 1;
+}
+
+.wrapper-2 h3 {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.wrapper-2 p {
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 2rem;
+  line-height: 2rem;
+  font-weight: 100;
 }
 
 .subWrapper-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.wrapper-2 p {
-  border: 1px solid white;
 }

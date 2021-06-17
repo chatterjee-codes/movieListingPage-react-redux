@@ -7,34 +7,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { getShows } from '../../../actions/showActions';
 import ShowItem from './ShowItem';
+import Loader from '../../layout/Loader';
 
-const Shows = ({ show: { shows }, getShows }) => {
+const Shows = ({ show: { shows, loading }, getShows }) => {
   useEffect(() => {
     getShows();
 
     //eslint-disable-next-line
   }, []);
-  return (
-    <div style={showStyle}>
-      {shows !== null ? (
-        shows.map((show) => <ShowItem show={show} key={show.id} />)
-      ) : (
-        <div style={{ marginLeft: '100%' }}>
-          <Spinner animation='border'></Spinner>
-        </div>
-      )}
-    </div>
-  );
+  if (loading) {
+    return <Loader />;
+  } else {
+    return (
+      <div className='listWrapper'>
+        {shows !== null ? (
+          shows.map((show) => <ShowItem show={show} key={show.id} />)
+        ) : (
+          <div style={{ marginLeft: '100%' }}>
+            <Spinner animation='border'></Spinner>
+          </div>
+        )}
+      </div>
+    );
+  }
 };
 // Movies.propTypes = {
 //   movie: PropTypes.object.isRequired,
 // };
-
-const showStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(4, 1fr)',
-  gridGap: '2rem',
-};
 
 const mapStateToProps = (state) => ({
   show: state.show,

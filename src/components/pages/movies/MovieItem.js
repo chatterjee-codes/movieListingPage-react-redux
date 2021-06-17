@@ -10,16 +10,14 @@ const MovieItem = ({
 }) => {
   let posterLink = `https://image.tmdb.org/t/p/w185/${poster_path}`;
   return (
-    <Fragment>
-      <div className='card'>
-        <Link to={`/movie/${id}`}>
-          <img src={posterLink} alt='poster' className='poster' />
-        </Link>
-        <h5>{original_title}</h5>
-        <p>{overview}</p>
-        <h6>Rating: {vote_average}</h6>
-      </div>
-    </Fragment>
+    <div className='listCard'>
+      <Link to={`/movie/${id}`}>
+        <img src={posterLink} alt='poster' className='poster' />
+      </Link>
+      <h5>{original_title}</h5>
+      <p>{overview}</p>
+      <h6>Rating: {vote_average}</h6>
+    </div>
   );
 };
 

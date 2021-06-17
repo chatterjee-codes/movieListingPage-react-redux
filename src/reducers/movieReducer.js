@@ -1,9 +1,15 @@
-import { GET_POPULAR_MOVIES, GET_MOVIE_DETAILS, ERROR } from '../actions/types';
+import {
+  GET_POPULAR_MOVIES,
+  GET_MOVIE_DETAILS,
+  ERROR,
+  SET_LOADING,
+} from '../actions/types';
 
 const initialState = {
   movies: [],
   movie: {},
   error: null,
+  loading: false,
 };
 
 export default (state = initialState, action) => {
@@ -12,11 +18,18 @@ export default (state = initialState, action) => {
       return {
         ...state,
         movies: action.payload,
+        loading: false,
       };
     case GET_MOVIE_DETAILS:
       return {
         ...state,
         movie: action.payload,
+        loading: false,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     case ERROR:
       return {

@@ -1,4 +1,4 @@
-import { GET_SHOWS, GET_SHOW_DETAILS, ERROR } from './types';
+import { GET_SHOWS, GET_SHOW_DETAILS, ERROR, SET_LOADING } from './types';
 import axios from 'axios';
 
 let api_key = '74b37141b7123c803bb6a7f66e9bf313';
@@ -39,3 +39,6 @@ export const getShowDetails = (id) => async (dispatch) => {
     });
   }
 };
+
+//set loading
+const setLoading = () => (dispatch) => ({ type: SET_LOADING });

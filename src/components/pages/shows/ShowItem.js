@@ -10,16 +10,18 @@ const ShowItem = ({
 }) => {
   let posterLink = `https://image.tmdb.org/t/p/w185/${poster_path}`;
   return (
-    <Fragment>
-      <div className='card'>
+    <div className='listCard'>
+      <div className='poster'>
         <Link to={`/show/${id}`}>
           <img src={posterLink} alt='poster' className='poster' />
         </Link>
-        <h5>{original_title}</h5>
-        <p>{overview}</p>
-        <h6>Rating: {vote_average}</h6>
       </div>
-    </Fragment>
+      <h5>{original_title}</h5>
+      <div id='overview'>
+        <p>{overview}</p>
+      </div>
+      <h6>Rating: {vote_average}</h6>
+    </div>
   );
 };
 
