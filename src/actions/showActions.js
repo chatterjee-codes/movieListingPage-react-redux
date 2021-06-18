@@ -49,4 +49,4 @@ export const getShowDetails = (id) => async (dispatch) => {
 };
 
 //set loading
-const setLoading = () => (dispatch) => ({ type: SET_LOADING });
+export const setLoading = () => (dispatch) => ({ type: SET_LOADING });
