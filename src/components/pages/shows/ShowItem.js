@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-import Loader from '../../layout/Loader';
 
 const ShowItem = ({ show: { id, overview, vote_average, poster_path } }) => {
   let posterLink = `https://image.tmdb.org/t/p/w185/${poster_path}`;

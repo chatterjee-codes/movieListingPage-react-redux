@@ -1,8 +1,7 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { getShowDetails } from '../../../actions/showActions';
@@ -32,7 +31,6 @@ const Show = ({ show: { show, loading }, getShowDetails }) => {
         <div className='wrapper-body'>
           <h1>{show.name}</h1>
           <h3>{show.tagline}</h3>
-          {/* <h4>Genre: {show.genres.map((genre) => genre.name + ' | ')}</h4> */}
           <div className='subWrapper-2'>
             <div>
               <h4>Rating: {show.vote_average}</h4>
@@ -55,10 +53,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { getShowDetails })(Show);
-
-// original_title,
-//       tagline,
-//       overview,
-//       poster_path,
-//       vote_average,
-//       release_date,

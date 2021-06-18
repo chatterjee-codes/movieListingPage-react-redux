@@ -3,13 +3,13 @@ import axios from 'axios';
 
 require('dotenv').config();
 
-let api_key;
+let api_key = '74b37141b7123c803bb6a7f66e9bf313';
 
-if (process.env.NODE_ENV !== 'production') {
-  api_key = process.env.REACT_APP_API_KEY;
-} else {
-  api_key = process.env.API_KEY;
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   api_key = process.env.REACT_APP_API_KEY;
+// } else {
+//   api_key = process.env.API_KEY;
+// }
 
 // Get TV Shows
 export const getShows = () => async (dispatch) => {
