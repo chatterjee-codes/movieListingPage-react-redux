@@ -2,7 +2,14 @@ import { GET_SHOWS, GET_SHOW_DETAILS, ERROR, SET_LOADING } from './types';
 import axios from 'axios';
 
 require('dotenv').config();
-let api_key = process.env.REACT_APP_KEY;
+
+let api_key;
+
+if (process.env.NODE_ENV !== 'production') {
+  api_key = process.env.REACT_APP_API_KEY;
+} else {
+  api_key = process.env.API_KEY;
+}
 
 // Get TV Shows
 export const getShows = () => async (dispatch) => {

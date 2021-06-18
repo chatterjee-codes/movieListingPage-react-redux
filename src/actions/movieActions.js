@@ -8,7 +8,13 @@ import {
 import axios from 'axios';
 require('dotenv').config();
 
-let api_key = process.env.REACT_APP_KEY;
+let api_key;
+
+if (process.env.NODE_ENV !== 'production') {
+  api_key = process.env.REACT_APP_API_KEY;
+} else {
+  api_key = process.env.API_KEY;
+}
 
 // Get popular movies from API
 export const getPopularMovies = () => async (dispatch) => {
